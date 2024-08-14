@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sora:wght@100..800&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --main-color: #8750f7;
+    --dark-color: #000;
+    --semidark-color: #2a1454;
+    
+}
+
+.link-color {
+    color: var(--dark-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.normal {
+    font-size: 15px;
+}
+
+.contbtn {
+    width: 120px;
+    height: 45px;
+    background-color: var(--semidark-color);
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.bg-upper {
+    background: url('/img/bg.webp');
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    margin-top: -85px;
+}
+
+.contbtn span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: top 0.5s;
+}
+
+.contbtn-text-one {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.contbtn-text-two {
+    position: absolute;
+    width: 100%;
+    top: 150%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.contbtn:hover .contbtn-text-one {
+    top: -100%;
+}
+
+.contbtn:hover .contbtn-text-two {
+    top: 50%;
+}
+.headsec{
+    height: 600px;
+}
+.sticky-navbar{
+    position: sticky;
+    top: 0;
+    background-color: white; 
+    transition: all 0.5s;
+}
+.gred-title {
+    background-image: linear-gradient(to right, var(--main-color) 0%, var(--semidark-color) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 550;
+}
+.title{
+    color: var(--semidark-color);
+}
+
+.teamimg{
+    border-radius: 20px;
+    position: relative;
+    z-index: 20;
+    border: 5px solid white;
+}
+.teamimg2{
+    position: absolute;
+    border-radius: 20px;
+    top: 150px;
+    left: 200px;
+    height: 350px;
+    width: 260px;
+    z-index: 10;
+}
+.z9{
+    z-index: 999;
+}
+@media(max-width:980px){
+    .teamimg2{
+        top: 300px;
+    }
+}
+@media(max-width:765px){
+   .teamimg2{
+    top: 160px;
+   }
+}
+@media(max-width:575px){
+   .teamimg2{
+    top: 300px;
+   }
+}
+
+
+
+
+
+
+
+
+
+.dot-container{
+    width: 90px;
+    height: 90px;
+    position: relative;
+}
+.dot{
+    height: 6px;
+    width: 6px;
+    background-color: var(--semidark-color);
+    border-radius: 50px;
+    position: absolute;
+    animation: initialAnimation 4s ease-in-out infinite; /* Run initial animation twice */
+    animation-fill-mode: forwards;
+}
+.dot:nth-child(1){
+    top: 0;
+    left: 50%;
+    animation-name: anidot1, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(2){
+    top: 25%;
+    left: 20%;
+    animation-name: anidot2, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(3){
+    top: 50%;
+    left: 0;
+    animation-name: anidot3, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(4){
+    bottom: 25%;
+    left: 20%;
+    animation-name: anidot4, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(5){
+    bottom: 0;
+    left: 50%;
+    animation-name: anidot5, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(6){
+    bottom: 25%;
+    right: 20%;
+    animation-name: anidot6, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(7){
+    top: 50%;
+    right: 0;
+    animation-name: anidot7, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(8){
+    top: 25%;
+    right: 20%;
+    animation-name: anidot8, mergeToCenter, shatterOutward;
+}
+.dot:nth-child(9){
+    top: 50%;
+    left: 50%;
+    animation: none; /* Central dot remains static */
+}
+
+@keyframes anidot1 {
+    0%, 100% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 20px); }
+}
+@keyframes anidot2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, 10px); }
+}
+@keyframes anidot3 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 0px); }
+}
+@keyframes anidot4 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+}
+@keyframes anidot5 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(0, -20px); }
+}
+@keyframes anidot6 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-10px, -10px); }
+}
+@keyframes anidot7 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 0px); }
+}
+@keyframes anidot8 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-10px, 10px); }
+}
+
+@keyframes mergeToCenter {
+    0% { transform: translate(var(--x), var(--y)); } 
+    100% { transform: translate(0, 0); } 
+}
+
+@keyframes shatterOutward {
+    0% { transform: translate(0, 0); } 
+    100% { transform: translate(var(--x), var(--y)); } 
+}
+
+
+.dot:nth-child(1) { --x: 0; --y: 20px; }
+.dot:nth-child(2) { --x: 10px; --y: 10px; }
+.dot:nth-child(3) { --x: 20px; --y: 0px; }
+.dot:nth-child(4) { --x: 10px; --y: -10px; }
+.dot:nth-child(5) { --x: 0; --y: -20px; }
+.dot:nth-child(6) { --x: -10px; --y: -10px; }
+.dot:nth-child(7) { --x: -20px; --y: 0px; }
+.dot:nth-child(8) { --x: -10px; --y: 10px; }
+
+
+.anidot1, .anidot2, .anidot3,.anidot4,.anidot5,.anidot6{
+    position: absolute; 
+}
+
+.anidot1 {
+    background-color: lightcoral;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    left: 50%;
+    top: -100px;
+    opacity: 0;
+    scale: 0.4;
+}
+
+.anidot2 {
+    background-color: var(--main-color);
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    left: 50%;
+    opacity: 0;
+    top: -100px;
+    scale: 0.4;
+}
+
+.anidot3 {
+    background-color: var(--semidark-color);
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    left: 50%;
+    top: -100px;
+    opacity: 0;
+    scale: 0.4;
+}
+.anidot4 {
+    background-color: lightgreen;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    left: 50%;
+    top: 0px;
+    opacity: 0;
+    scale: 0.4;
+}
+.anidot5 {
+    background-color: var(--main-color);
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    left: 50%;
+    top: 0px;
+    opacity: 0;
+    scale: 0.4;
+}
+.anidot5 {
+    background-color:var(--main-color);
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    left: 50%;
+    top: 0px;
+    opacity: 0;
+    scale: 0.4;
+}
+.anidot6 {
+    background-color:lightcoral;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    left: 50%;
+    top: 0px;
+    opacity: 0;
+    scale: 0.4;
+}
+.ring{
+    height: 70px;
+    width: 70px;
+    border: 1px dashed var(--semidark-color);
+    border-radius: 50px;
+    animation: wheel 7s linear infinite;
+}
+
+@keyframes wheel{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.qualitycard {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+}
+
+.qualitycard::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(1.1);
+    background-color: transparent; /* Default background color */
+    transition: background-color 0.5s ease;
+    z-index: 0;
+}
+
+.qualitycard.in-view::before {
+    background-color: var(--main-color); /* Customize your color */
+}
+
+.card1.in-view::before {
+    background-color: var(--main-color);
+}
+
+.card2.in-view::before {
+    background-color: lightcoral;
+}
+
+.card3.in-view::before {
+    background-color: var(--color3);
+}
+
+.card4.in-view::before {
+    background-color: var(--color4);
+}
+
+/* Optional: Ensure content is above the ::before pseudo-element */
+.qualitycard .card-body {
+    position: relative;
+    z-index: 1;
+}
