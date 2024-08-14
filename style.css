@@ -115,6 +115,12 @@ body {
     width: 260px;
     z-index: 10;
 }
+
+@media(max-width:769px){
+    .teamimg2{
+        display: none;
+    }
+}
 .z9{
     z-index: 999;
 }
@@ -255,6 +261,20 @@ body {
 .dot:nth-child(7) { --x: -20px; --y: 0px; }
 .dot:nth-child(8) { --x: -10px; --y: 10px; }
 
+#pin-windmill-wrap {
+    position: relative;
+    z-index: 10; 
+}
+@media(max-width:970px){
+    #pin-windmill-wrap{
+        padding-top: 160px;
+
+    }
+}
+#pin-section{
+    position: relative;
+    z-index: 15;
+}
 
 .anidot1, .anidot2, .anidot3,.anidot4,.anidot5,.anidot6{
     position: absolute; 
@@ -293,7 +313,7 @@ body {
     scale: 0.4;
 }
 .anidot4 {
-    background-color: lightgreen;
+    background-color: rgb(88, 162, 88);
     height: 40px;
     width: 40px;
     border-radius: 50px;
@@ -312,16 +332,7 @@ body {
     opacity: 0;
     scale: 0.4;
 }
-.anidot5 {
-    background-color:var(--main-color);
-    height: 40px;
-    width: 40px;
-    border-radius: 50px;
-    left: 50%;
-    top: 0px;
-    opacity: 0;
-    scale: 0.4;
-}
+
 .anidot6 {
     background-color:lightcoral;
     height: 40px;
@@ -338,7 +349,16 @@ body {
     border: 1px dashed var(--semidark-color);
     border-radius: 50px;
     animation: wheel 7s linear infinite;
+    position: relative;
 }
+
+
+@media(max-width:990px){
+   .anidot1,.anidot2,.anidot3,.anidot4,.anidot5,.anidot6{
+    display: none !important;
+   }
+}
+
 
 @keyframes wheel{
     0%{
@@ -355,41 +375,52 @@ body {
     transition: background-color 0.5s ease;
 }
 
-.qualitycard::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: scaleX(1.1);
-    background-color: transparent; /* Default background color */
-    transition: background-color 0.5s ease;
-    z-index: 0;
-}
 
-.qualitycard.in-view::before {
+.qualitycard {
     background-color: var(--main-color); /* Customize your color */
 }
 
-.card1.in-view::before {
+.card1 {
     background-color: var(--main-color);
 }
 
-.card2.in-view::before {
+.card2 {
     background-color: lightcoral;
 }
 
-.card3.in-view::before {
-    background-color: var(--color3);
+.card3 {
+    background-color: rgb(88, 162, 88);
 }
 
-.card4.in-view::before {
-    background-color: var(--color4);
+.card4 {
+    background-color: var(--semidark-color);
 }
 
 /* Optional: Ensure content is above the ::before pseudo-element */
 .qualitycard .card-body {
     position: relative;
-    z-index: 1;
+    z-index: 1 !important;
+}
+
+.sitecard img{
+    transition: all 0.3s;
+}
+.sitecard:hover img{
+  transform: scale(1.1);
+}
+
+.whyusimg{
+        animation: bouncy 1000ms linear infinite;
+}
+
+@keyframes bouncy{
+    0%{
+        transform: scale(0.98);
+    }
+    50%{
+        transform: scale(1.01);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
